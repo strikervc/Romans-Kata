@@ -42,3 +42,29 @@ def range_0_to_500 (roman)
     end
     return message
 end
+
+def validate_romans (roman)
+    str = roman.split("")
+    first_roman_letter = str[0]
+
+    case first_roman_letter
+    when "I"
+        times = 0
+        for i in (1..str.length - 1)
+            if str[i] == "I"
+                times += 1
+                if times > 3
+                    message = "Syntax error: 'I' cannot be repeated more than three times"
+                else 
+                    message = "All right"
+                end
+            end
+        end
+        if str[3] != nil 
+            message = "Syntax error: No numbers allowed at pos 3"
+        else 
+            message = "All right"
+        end
+        
+    end
+end

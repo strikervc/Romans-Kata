@@ -15,4 +15,12 @@ class RomansTest < Test::Unit::TestCase
         assert_equal "All right", range_0_to_500("D")
         assert_equal "All right", range_0_to_500("LVII")
     end
+
+    def test_validate_romans
+        #letter I only can rest a letter
+        assert_equal "All right", validate_romans("IV")
+        assert_equal "All right", validate_romans("IL")
+        assert_equal "All right", validate_romans("ID")
+        assert_equal "All right", validate_romans("IX")
+    end
 end
