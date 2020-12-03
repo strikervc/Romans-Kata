@@ -30,4 +30,9 @@ class RomansTest < Test::Unit::TestCase
         assert_equal "All right", validate_romans("ID")
         assert_equal "All right", validate_romans("IX")
     end
+
+    def test_validate_roman
+        assert_equal "All right", validate_romans("VIII")
+        assert_equal "Syntax error", validate_romans("VD")
+    end
 end

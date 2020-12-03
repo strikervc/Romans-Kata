@@ -9,6 +9,7 @@ def validate_non_repetitions_DLV(roman)
                 message = "All right"
             end
         end
+        return message
     end
 
     if first_letter == "L"
@@ -44,6 +45,7 @@ def range_0_to_500 (roman)
 end
 
 def validate_romans (roman)
+    roman_saved = roman
     str = roman.split("")
     first_roman_letter = str[0]
 
@@ -71,5 +73,34 @@ def validate_romans (roman)
         else 
             message = "Syntax error"
         end
+        return message
+
+    when "V"
+        times = 0
+        result = validate_non_repetitions_DLV(roman_saved)
+        if result == "All right"
+            for i in (1..str.length - 1)
+                if str[i] == "I" || str[i] == nil
+                    message = "All right"
+                else
+                    message = "Syntax error"
+                    break
+                end
+
+                if str[i] == "I"
+                    times = times + 1
+                    if times > 3
+                        message = "Syntax error: 'I' cannot be repeated more than three times"
+                        break
+                    else 
+                        message = "All right"
+                    end
+                end
+
+                
+            end
+        end
+        return message
+    else
     end
 end
