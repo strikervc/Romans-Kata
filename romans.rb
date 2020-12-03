@@ -65,6 +65,11 @@ def validate_romans (roman)
         else 
             message = "All right"
         end
-        
+
+        if str[2] == "I" || str[2] == nil
+            message = "All right"
+        else 
+            message = "Syntax error"
+        end
     end
 end

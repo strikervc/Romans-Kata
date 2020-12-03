@@ -16,10 +16,17 @@ class RomansTest < Test::Unit::TestCase
         assert_equal "All right", range_0_to_500("LVII")
     end
 
-    def test_validate_romans
+    def test_validate_only_I_can_rest
         #letter I only can rest a letter
         assert_equal "All right", validate_romans("IV")
         assert_equal "All right", validate_romans("IL")
+        assert_equal "All right", validate_romans("ID")
+        assert_equal "All right", validate_romans("IX")
+    end
+
+    def test_validate_I_rest_distance
+        assert_equal "Syntax error", validate_romans("IVV")
+        assert_equal "Syntax error", validate_romans("IXL")
         assert_equal "All right", validate_romans("ID")
         assert_equal "All right", validate_romans("IX")
     end
