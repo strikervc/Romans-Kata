@@ -33,3 +33,12 @@ def validate_non_repetitions_DLV(roman)
     return message
 end
          
+def range_0_to_500 (roman)
+    array = roman.split("")
+    if array[0] == "M"
+        message = "Syntax error: Range must be 500 or less (but no minus than 0)"
+    else
+        message = "All right"
+    end
+    return message
+end
