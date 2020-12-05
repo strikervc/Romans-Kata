@@ -52,6 +52,7 @@ def validate_romans(romans)
                             message = "Ok"
                         end
                     end
+                    puts message
                 end   
                 return message
 
@@ -59,7 +60,7 @@ def validate_romans(romans)
                 if chain[4] != nil
                     message = "Syntax error"
                 else
-                    for i in (1..chain.length)
+                    for i in (1..chain.length - 1)
                         if chain[i] == "I" || chain[i] == nil
                            message = "Ok"                    
                         else
@@ -67,7 +68,9 @@ def validate_romans(romans)
                            break
                         end
                     end
+                    puts message
                 end
+         
                 return message
 
             when "X"
@@ -94,6 +97,7 @@ def validate_romans(romans)
                            break
                         end
                     end   
+                    puts message
                 end
                 return message       
 
@@ -111,9 +115,9 @@ def validate_romans(romans)
                            message = "Ok"
                            break
                         end
-                    end   
-                end
-
+                    end  
+                    puts message 
+                end     
                 return message       
             else
             end 
@@ -124,3 +128,4 @@ def validate_romans(romans)
     end
 end
 
+validate_romans("IX")
