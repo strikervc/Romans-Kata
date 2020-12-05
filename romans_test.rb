@@ -15,4 +15,8 @@ class Romans < Test::Unit::TestCase
         assert_equal "Ok",validate_non_repetitions_V("IV")
         assert_equal "Ok", validate_non_repetitions_V("VII")
     end
+
+    def test_validate_roman 
+        assert_equal "Syntax error", validate_roman("VX")
+    end
 end

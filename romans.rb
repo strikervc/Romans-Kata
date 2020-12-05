@@ -29,3 +29,32 @@ def validate_non_repetitions_V(roman)
     end
     return message
 end
+
+def validate_roman(roman)
+    chain = roman.split("")
+    result = validate_range(roman)
+    if result = "Ok"
+        rept = validate_non_repetitions_V(roman)
+        if rept = "Ok"
+            if chain[0] == "V"
+                if chain[1] != "I"
+                    message = "Syntax error"
+                else
+                    message = "Ok"
+                end
+            elsif chain[0] == "I"
+                if chain[3] != nil
+                    message = "Syntax error"
+                else
+                    message = "Ok"
+                end 
+            else
+            end
+        else 
+            message = "Syntax error"
+        end
+    else 
+        message = "Syntax error"
+    end
+    return message
+end
