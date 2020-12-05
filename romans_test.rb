@@ -18,5 +18,8 @@ class Romans < Test::Unit::TestCase
 
     def test_validate_roman 
         assert_equal "Syntax error", validate_roman("VX")
+        assert_equal "Ok", validate_roman("VII")
+        assert_equal "Ok", validate_roman("VIII")
+        assert_equal "Ok", validate_roman("VI")
     end
 end

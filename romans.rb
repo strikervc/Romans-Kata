@@ -33,9 +33,9 @@ end
 def validate_roman(roman)
     chain = roman.split("")
     result = validate_range(roman)
-    if result = "Ok"
+    if result == "Ok"
         rept = validate_non_repetitions_V(roman)
-        if rept = "Ok"
+        if rept == "Ok"
             if chain[0] == "V"
                 if chain[1] != "I"
                     message = "Syntax error"
@@ -49,6 +49,7 @@ def validate_roman(roman)
                     message = "Ok"
                 end 
             else
+                message = "Ok"
             end
         else 
             message = "Syntax error"
@@ -56,5 +57,8 @@ def validate_roman(roman)
     else 
         message = "Syntax error"
     end
+    puts message
     return message
 end
+
+validate_roman("IV")
