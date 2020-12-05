@@ -13,3 +13,19 @@ def validate_range(roman)
     end  
     return message
 end
+
+def validate_non_repetitions_V(roman)
+    v_times = 0
+    chain = roman.split("")
+    for i in (0..chain.length - 1)
+        if chain[i] == "V"
+            v_times = v_times + 1
+            if v_times > 1
+                message = "Syntax error"
+            else 
+                message = "Ok"
+            end
+        end
+    end
+    return message
+end

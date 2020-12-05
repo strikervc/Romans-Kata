@@ -8,4 +8,11 @@ class Romans < Test::Unit::TestCase
         assert_equal "Ok", validate_range("IV")
         assert_equal "Syntax error", validate_range("XV")
     end
+
+    def test_non_repetitions_V
+        assert_equal "Syntax error", validate_non_repetitions_V("VV")
+        assert_equal "Ok", validate_non_repetitions_V("VI")
+        assert_equal "Ok",validate_non_repetitions_V("IV")
+        assert_equal "Ok", validate_non_repetitions_V("VII")
+    end
 end
